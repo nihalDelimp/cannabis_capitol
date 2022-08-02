@@ -1,0 +1,26 @@
+/* mixin */
+@mixin oswald($transform: uppercase, $fontweight: bold, $textcolor: $black, $textAlign: center) {
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 1px;
+    text-transform: $transform;
+    font-weight: $fontweight;
+    color: $textcolor;
+    text-align: $textAlign;
+}
+@mixin imgCover($widthimg:100%, $objectfit: cover, $objectposition: center top) {
+    width:$widthimg;
+    object-fit: $objectfit;
+    object-position: $objectposition;
+}
+@mixin flex($alignItems:center, $justifyContent:center) {
+    display: flex;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+    flex-wrap: wrap;
+}
+// @mixin fontThirty($font30:30px) {
+//     font-size: $font30;
+//     @media (max-width:767px) {
+//         font-size:$font30 - 10px;
+//     }
+// }

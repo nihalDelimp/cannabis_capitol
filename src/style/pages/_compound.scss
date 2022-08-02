@@ -1,0 +1,150 @@
+// Creative Compound
+.creativeCom_top {
+    background-color: $gray;
+    div:nth-child(3) .creativeCom_topIn {
+        margin-bottom: 0;
+    }
+    .creativeCom_topIn {
+        margin-bottom: 30px;
+
+        img {
+            height: 430px;
+            @include imgCover;
+        }
+    }
+}
+.join_compound {
+    background-image: url(../../assets/compound-bg.jpg);
+    background-size: cover;
+    min-height: 270px;
+    padding: 30px;
+    @include flex();
+
+    &--in {
+        @extend %textCompound;
+        .ccHead {
+            @include oswald($textcolor: $white);
+        }
+        h4 {
+            color: $white;
+        }
+    }
+    @media (max-width:991px) {
+        min-height: 200px;
+    }
+}
+.daily_live {
+    .row {
+        margin-bottom: 30px;
+    }
+    .newslistTop {
+        height: 100%;
+        padding: 0;
+        img {
+            height: 100%;
+            @include imgCover;
+        }
+    }
+    .daily_liveLeft {
+        .newslistTop {
+            @extend %textCompound;
+        }
+    }
+}
+.theme_galleryWeaper {
+    padding-top: 50px;
+    .font50 {
+        @include oswald($textcolor: $base-color, $fontweight: 900);
+        margin-bottom: 2.5rem;
+    }
+    .theme_gallery {
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+.themeGallery_img {
+    height: 240px;
+    @include imgCover;
+}
+.validation_compound {
+    margin-top: 5rem;
+    .join_compound {
+        background-image: none;
+        margin-bottom: 0;
+        min-height: 230px;
+        h2 {
+            color: $base-color;
+        }
+        h4 {
+            color: $black;
+            font-size: 20px;
+        }
+    }
+}
+.validation_col--content {
+    @extend %textCompound;
+}
+.compound_formMain {
+    padding: 40px;
+    .compound_formDetail {
+        height: 100%;
+        flex-direction: column;
+        @include flex();
+        max-width: 450px;
+        margin: 0 auto;
+        @extend %textCompound;
+        .sec_title {
+            line-height: 1.4;
+            padding-bottom: 0;
+        }
+    }
+    img {
+        @include imgCover;
+    }
+    @media (max-width:991px) {
+        padding: 20px;
+    }
+}
+.bePart {
+    @include flex($justifyContent: space-between);
+    & > * {
+        max-width: calc(50% - 5px);
+        width: calc(50% - 5px);
+        margin-bottom: 10px;
+        @media (max-width:767px) {
+            width: 100%; 
+            max-width: 100%; 
+        }
+    }
+    input,
+    textarea {
+        height: 50px;
+        background-color: $gray;
+        font-size: 20px;
+        border: 0;
+        padding: 15px;
+        text-align: left;
+        &:focus {
+            outline: none;
+        }
+        &[type="submit"] {
+            background-color: $base-color;
+            @include oswald($textcolor: $white);
+            padding: 0;
+            line-height: 50px;
+            margin-bottom: 0;
+            transition: $transititon;
+            &:hover {
+                background-color: $black;
+            }
+        }
+        &.full {
+            min-width: 100%;
+        }
+    }
+    textarea {
+        height: 150px;
+        resize: none;
+    }
+}

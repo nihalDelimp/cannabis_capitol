@@ -1,0 +1,16 @@
+
+.imageInstaPost {
+    width: 100%;
+    padding:10px;
+    max-height: 210px;
+  }
+  
+  .mainDiv {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .mainDiv > div {
+    flex: 50%; 
+    
+  }

@@ -1,0 +1,48 @@
+
+.main_nav {
+    background-color: $base-color;
+    .navbar-brand {
+        img {
+            width: 55px;
+        }
+    }
+    .navbar-nav {
+        margin-left: auto;
+        .nav-item {
+            padding: 0 0.5rem;
+            .nav-link {
+                padding: 10px 1rem;
+                @include oswald($textcolor: $white, $fontweight:500);
+                &[data-toggle="modal"] {
+                    font-weight: 600;
+                }
+            }
+            &.sign_upNav {
+                .nav-link {
+                    background-color: darken($base-color, 9);
+                }
+            }
+        }
+    }
+@media (max-width:991px) {
+    .navbar-collapse {
+        margin-top: 10px;
+        &.collapse {
+            border-top: 1px solid darken($base-color, 9);
+        }
+        
+    }
+    .navbar-toggler {
+        padding: 0;
+        border: 0;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+}
+
+
+.navbar-light .navbar-toggler-icon {
+    filter: brightness(1) invert(1);
+}

@@ -1,0 +1,29 @@
+.sec_title {
+    @include oswald($textAlign: left);
+    // font-size: 30px;
+    border-bottom: 3px solid $base-color;
+    padding-bottom: 10px;
+    margin: 30px 0;
+}
+body {
+    font-size: 16px;
+    overflow-x: hidden;
+}
+h1, .font50 {
+    font-size: 50px;
+    @media (max-width:991px) {
+        font-size: 40px;  
+    }
+}
+h2, .font40 {
+    font-size: 40px;
+    @media (max-width:991px) {
+        font-size: 30px;  
+    }
+}
+h3, .font30 {
+    font-size: 30px;
+    @media (max-width:991px) {
+        font-size: 22px;  
+    }
+}

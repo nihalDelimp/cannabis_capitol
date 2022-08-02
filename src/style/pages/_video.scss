@@ -1,0 +1,38 @@
+.vidThumb {
+    margin: 0;
+    img {
+        @include imgCover($widthimg:100%);
+    }
+}
+.relatedVideos {
+    position: relative;
+    padding-bottom: 1rem;
+    a {
+        color: $black;
+    }
+    .intDetails {
+        font-size: 18px;
+    }
+    img {
+        height: 150px;
+        max-width:300px;
+    }
+    .moreVideosLink {
+        a {
+            @extend %morelink;
+            bottom: 0;
+            top: auto;
+        }        
+    }
+    // .newsListItem {
+    //     margin-bottom: 15px;
+    // }
+    .newsList {
+        flex-direction: column;
+        .newsListItem {
+            max-width: 100%;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    }
+}

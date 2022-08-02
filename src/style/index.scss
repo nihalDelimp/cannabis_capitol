@@ -1,0 +1,25 @@
+// @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import "utilities/_index";
+@import "components/_index";
+@import "pages/_index";
+
+/* banner */
+.hm_banner {
+  img {
+    width: 100%;
+    @media (max-width: 767px) {
+      @include imgCover($objectposition: center);
+      height: 250px;
+    }
+  }
+}
+.logoBanner {
+  text-align: center;
+  margin-bottom: -2rem;
+  &--wraper {
+    border-bottom: 6px solid $base-color;
+    padding: 3rem 0;
+  }
+}

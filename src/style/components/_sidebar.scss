@@ -1,0 +1,59 @@
+
+/*right sidebar*/
+.sidebarTitle {
+    color: lighten($black, 35);
+    margin-top: -6px;
+    @media (max-width:991px) {
+        margin-top: 30px;
+    }
+}
+.formSidebar {
+    input {
+        width: 100%;
+        border: 1px solid transparent;
+        padding: 10px 20px;
+        font-size: 20px;
+        transition: $transititon;
+        &:hover,
+        &:focus {
+            border: 1px solid $base-color;
+            outline: none;
+        }
+        &[type="submit"] {
+            background-color: $base-color;
+            @include oswald;
+            color: $white;
+            margin-top: 8px;
+            outline-color: $gray;
+            &:hover {
+                background-color: $black;
+            }
+        }
+    }
+    label {
+        @include oswald($transform: none);
+        color: lighten($black, 40);
+        font-size: 20px;
+        text-align: center;
+        display: block;
+        margin-bottom: 0;
+    }
+}
+.sidebarMain {
+    padding-bottom: 50px;
+    &.newsletterSidebar {
+        .sidebarTitle {
+            text-align: center;
+        }
+    }
+    .rightadv {
+        margin-bottom: 2rem;
+        img {
+            width: 100%;
+        }
+    }
+    @media (max-width:991px) {
+        padding-bottom: 1px;
+    }
+}
+/* right Sidebar End*/

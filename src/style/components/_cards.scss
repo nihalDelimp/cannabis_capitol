@@ -1,0 +1,194 @@
+/* Card grid */
+.cardMain {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  .newscard {
+    &.firstNews {
+      grid-column: 1 / -1;
+      .newscard--postThum {
+        height: 100%;
+        min-height: 170px;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  }
+}
+
+/* Card items */
+.newscard {
+  &--wrap {
+    padding: 20px;
+    background-color: $white;
+    padding-bottom: 90px;
+    position: relative;
+    height: 100%;
+  }
+  &--videoPlay {
+    position: relative;
+  }
+  &--postThum {
+    height: 180px;
+    @include imgCover;
+  }
+  &--playIcon {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    left: calc(50% - 45px);
+    top: calc(50% - 45px);
+  }
+  &--postCont {
+    padding-top: 15px;
+    text-align: center;
+  }
+  &--postCategory {
+    @include oswald($textcolor: $base-color);
+    font-size: 20px;
+    margin: 10px auto;
+  }
+  &--postTitle {
+    @include oswald($transform: none);
+    // font-size: 30px;
+    // @media (max-width:767px) {
+    //     font-size: 25px;
+    // }
+  }
+  &--postDate {
+    color: lighten($black, 45);
+    font-weight: 500;
+    font-size: 14px;
+  }
+  &--postPara {
+    margin-top: 1.5rem;
+    text-align: left;
+    color: lighten($black, 35);
+  }
+  &--linkDetails {
+    padding: 5px;
+    border: 3px solid $gray;
+    @include oswald;
+    //color: $black;
+    font-size: 20px;
+    min-width: 230px;
+    display: inline-block;
+    //text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 115px);
+    &:hover {
+      color: $base-color;
+      transition: $transititon;
+      border-color: $base-color;
+    }
+    @media (max-width: 991px) {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Card pagination */
+.simple-pagination {
+  ul {
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+    padding-top: 50px;
+    text-align: center;
+    li {
+      display: inline-block;
+      margin: 0 2%;
+      a,
+      span {
+        color: $black;
+        padding: 20px 30px;
+        text-decoration: none;
+        font-size: 20px;
+        border: 1px solid $white;
+        &:hover,
+        &:focus {
+          background-color: $white;
+          border-color: $white;
+          box-shadow: none;
+        }
+        @media (max-width: 991px) {
+          padding: 10px 15px;
+        }
+      }
+      .current {
+        color: $white;
+        background-color: $base-color;
+        border-color: $base-color;
+        &:hover {
+          background-color: $base-color;
+          border-color: $base-color;
+        }
+      }
+      .prev.current,
+      .next.current {
+        background: $white;
+        border-color: $gray;
+        color: $black;
+        display: none;
+      }
+    }
+  }
+}
+
+//Video news card
+.newsList {
+  //display: grid;
+  list-style: none;
+  padding: 0;
+  // grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  //  grid-gap: 20px;
+  @include flex($justifyContent: flex-start, $alignItems: inherit);	
+  gap: 20px;
+  .newsListItem {
+    max-width: calc(25% - 15px);
+    min-width: calc(25% - 15px);
+    &.bigBannner {
+      max-width: unset;
+    }
+    @media (max-width: 991px) {
+      max-width: calc(50% - 10px);
+      width: calc(50% - 10px);
+      margin-bottom: 20px;
+    }
+    @media (max-width: 767px) {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  margin-bottom: 10px;
+  img {
+    height: 140px;
+    @include imgCover;
+    @media (max-width: 991px) {
+      height: 200px;
+    }
+    @media (max-width: 679px) {
+      height: 100%;
+    }
+  }
+  .newsTitle {
+    border-right: 1px solid $black;
+    padding-right: 10px;
+    margin-right: 10px;
+    height: 16px;
+    display: inline-block;
+    line-height: 16px;
+  }
+  .intDetails {
+    padding-top: 10px;
+    font-weight: 600;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
